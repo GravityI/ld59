@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dtgn1ktyj061o"]
+
+[ext_resource type="Theme" uid="uid://c0pdtj7a2k0uh" path="res://game_theme.tres" id="1_wv5lq"]
+[ext_resource type="Script" uid="uid://brgl8hcq1te8w" path="res://scripts/restart_button.gd" id="2_erk2x"]
+
+[node name="WinScreen" type="Node" unique_id=499333796]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1532971425]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=157287410]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -161.0
+offset_right = 576.0
+offset_bottom = -112.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_wv5lq")
+theme_override_font_sizes/font_size = 64
+text = "The galaxy is saved!
+
+YOU WIN!"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="RestartButton" type="Button" parent="." unique_id=1197134400]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 119.0
+offset_right = 100.0
+offset_bottom = 156.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_wv5lq")
+theme_override_font_sizes/font_size = 32
+text = "RESTART"
+flat = true
+script = ExtResource("2_erk2x")
+
+[connection signal="pressed" from="RestartButton" to="RestartButton" method="_on_pressed"]
