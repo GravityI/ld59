@@ -2,6 +2,27 @@
 
 [ext_resource type="Theme" uid="uid://c0pdtj7a2k0uh" path="res://game_theme.tres" id="1_o5qli"]
 
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_o5qli"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0wfyh"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o5qli"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 0, 0.016666412, 0.8980392)
+
 [node name="Main" type="Node" unique_id=521601107]
 
 [node name="Background" type="ColorRect" parent="." unique_id=20420499]
@@ -12,5 +33,165 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_o5qli")
 color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1817666094]
+[node name="Station" type="TextureRect" parent="." unique_id=1903897855]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_o5qli")
+metadata/_edit_lock_ = true
+
+[node name="Planet1" type="TextureRect" parent="." unique_id=66240893]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -196.0
+offset_right = -128.0
+offset_bottom = -132.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(32, 32)
+texture = SubResource("PlaceholderTexture2D_o5qli")
+
+[node name="Planet2" type="TextureRect" parent="." unique_id=211797752]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 256.0
+offset_top = -32.0
+offset_right = 320.0
+offset_bottom = 32.0
+grow_vertical = 2
+pivot_offset = Vector2(32, 32)
+texture = SubResource("PlaceholderTexture2D_o5qli")
+
+[node name="Planet3" type="TextureRect" parent="." unique_id=2055354237]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = 132.0
+offset_right = -128.0
+offset_bottom = 196.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(32, 32)
+texture = SubResource("PlaceholderTexture2D_o5qli")
+
+[node name="Planet4" type="TextureRect" parent="." unique_id=139975134]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 160.0
+offset_top = -196.0
+offset_right = 224.0
+offset_bottom = -132.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(32, 32)
+texture = SubResource("PlaceholderTexture2D_o5qli")
+
+[node name="Planet5" type="TextureRect" parent="." unique_id=543884796]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -20.0
+offset_right = -224.0
+offset_bottom = 44.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(32, 32)
+texture = SubResource("PlaceholderTexture2D_o5qli")
+
+[node name="Planet6" type="TextureRect" parent="." unique_id=1594265539]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 160.0
+offset_top = 132.0
+offset_right = 224.0
+offset_bottom = 196.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(32, 32)
+texture = SubResource("PlaceholderTexture2D_o5qli")
+
+[node name="UI" type="Control" parent="." unique_id=2099470796]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="ChaosBar" type="ProgressBar" parent="UI" unique_id=1833395923]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -33.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_o5qli")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+theme_override_styles/background = SubResource("StyleBoxFlat_0wfyh")
+theme_override_styles/fill = SubResource("StyleBoxFlat_o5qli")
+step = 1.0
+value = 50.0
+metadata/_edit_lock_ = true
+
+[node name="ChaosBarLabel" type="Label" parent="UI" unique_id=399942353]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -64.0
+offset_right = 300.0
+offset_bottom = -35.0
+grow_vertical = 0
+theme = ExtResource("1_o5qli")
+text = "Chaos Meter"
+uppercase = true
+metadata/_edit_lock_ = true
+
+[node name="Time Left" type="Label" parent="UI" unique_id=379602030]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 830.0
+offset_top = -64.0
+offset_right = 1139.0
+offset_bottom = -35.0
+grow_vertical = 0
+theme = ExtResource("1_o5qli")
+text = "Time Left: 300"
+horizontal_alignment = 2
+uppercase = true
+metadata/_edit_lock_ = true

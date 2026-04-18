@@ -25,6 +25,30 @@ expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sugp2"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fvms"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p1w3f"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 0.4)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
 [resource]
 Button/fonts/font = ExtResource("1_1fvms")
 Label/colors/font_color = Color(1, 1, 1, 1)
@@ -35,8 +59,14 @@ Label/constants/outline_size = 0
 Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
 Label/constants/shadow_outline_size = 1
-Label/font_sizes/font_size = 16
+Label/font_sizes/font_size = 32
 Label/fonts/font = ExtResource("1_1fvms")
 Label/styles/focus = SubResource("StyleBoxFlat_0wfyh")
 Label/styles/normal = SubResource("StyleBoxEmpty_sugp2")
+ProgressBar/colors/font_color = Color(0.95, 0.95, 0.95, 1)
+ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)
+ProgressBar/constants/outline_size = 0
+ProgressBar/font_sizes/font_size = 32
 ProgressBar/fonts/font = ExtResource("1_1fvms")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_1fvms")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_p1w3f")
