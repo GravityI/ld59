@@ -1,0 +1,5 @@
+- Player Controls SCOUT, which can roam through the map picking up WOOD and COINS.
+- Pressing [ACTION] makes SCOUT burn wood to create a campfire that attracts nearby BEASTS.
+- BEASTS move randomly through the map and automatically interact with [COIN SOURCE] to generate COINS.
+- If SCOUT touches any BEAST, it loses HP. If SCOUT's HP reaches 0, the player loses.
+- Player wins once they reach [WIN AMOUNT] COINS.

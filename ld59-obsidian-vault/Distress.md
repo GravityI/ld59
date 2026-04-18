@@ -1,0 +1,12 @@
+- Dispatch inspired
+- Player is monitoring a galaxy from a space station, PLANETS will send DISTRESS SIGNALS and the player must select the correct SHIP according to the challenged ATTRIBUTES to assign.
+- ENTROPY METER is filled for each second that a planet is unattended and reduces for each second that all planets are in peace.
+- Player must stop the ENTROPY METER from reaching its max for 5 minutes. If they can, they win. Otherwise, they lose.
+- ATTRIBUTES are COMBAT, MOBILITY, DIPLOMACY, SCIENCE
+- DISTRESS SIGNAL types are:
+	- COMBAT/MOBILITY
+	- COMBAT/DIPLOMACY
+	- COMBAT/SCIENCE
+	- MOBILITY/DIPLOMACY
+	- MOBILITY/SCIENCE
+	- DIPLOMACY/SCIENCE

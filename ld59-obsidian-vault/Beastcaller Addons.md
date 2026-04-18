@@ -1,0 +1,2 @@
+- Endless Mode: Buyable upgrades with COINS instead of win, increase Campfire Duration, Campfire Range, Max WOOD capacity. Score is calculated equal to the amount of COINS the player accumulated.
+- KNIGHT: Follows SCOUT if close to it, deals damage and disappears on touch.

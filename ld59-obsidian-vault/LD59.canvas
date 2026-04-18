@@ -1,0 +1,23 @@
+{
+	"nodes":[
+		{"id":"4bb43df64769b326","type":"file","file":"Distress.md","x":-306,"y":43,"width":400,"height":617},
+		{"id":"89e9ef7d2877c471","type":"text","text":"Theme: Signal","x":-660,"y":-320,"width":250,"height":60},
+		{"id":"80539c9540f82062","type":"text","text":"Smoke Signal","x":-660,"y":-98,"width":250,"height":60},
+		{"id":"150ff57609ee400a","type":"text","text":"Traffic Signal","x":-1080,"y":-98,"width":250,"height":60},
+		{"id":"d4c0f2db4b7df496","type":"file","file":"Beastcaller.md","x":-735,"y":40,"width":400,"height":620},
+		{"id":"3bd2ed6ee3b1a7f6","type":"text","text":"Distress Signal","x":-240,"y":-98,"width":273,"height":60},
+		{"id":"7d61e7153018669a","type":"text","text":"Radio/TV Signal","x":200,"y":-98,"width":250,"height":60},
+		{"id":"4495c2e9608ce859","type":"file","file":"Distress Addons.md","x":-306,"y":770,"width":400,"height":256},
+		{"id":"667bec68cfa50db4","type":"file","file":"Beastcaller Addons.md","x":-735,"y":766,"width":400,"height":260}
+	],
+	"edges":[
+		{"id":"d0175ab5294906cf","fromNode":"89e9ef7d2877c471","fromSide":"bottom","toNode":"150ff57609ee400a","toSide":"top"},
+		{"id":"b013aedf21422b17","fromNode":"89e9ef7d2877c471","fromSide":"bottom","toNode":"80539c9540f82062","toSide":"top"},
+		{"id":"2a3ab465dede4ca6","fromNode":"80539c9540f82062","fromSide":"bottom","toNode":"d4c0f2db4b7df496","toSide":"top"},
+		{"id":"6ea4977cda5982b6","fromNode":"d4c0f2db4b7df496","fromSide":"bottom","toNode":"667bec68cfa50db4","toSide":"top"},
+		{"id":"3db1b90914a6fcb8","fromNode":"89e9ef7d2877c471","fromSide":"bottom","toNode":"3bd2ed6ee3b1a7f6","toSide":"top"},
+		{"id":"3dbab1904897aa51","fromNode":"89e9ef7d2877c471","fromSide":"right","toNode":"7d61e7153018669a","toSide":"top"},
+		{"id":"20f93874f8f64019","fromNode":"3bd2ed6ee3b1a7f6","fromSide":"bottom","toNode":"4bb43df64769b326","toSide":"top"},
+		{"id":"c5f3fa323bc27ae1","fromNode":"4bb43df64769b326","fromSide":"bottom","toNode":"4495c2e9608ce859","toSide":"top"}
+	]
+}

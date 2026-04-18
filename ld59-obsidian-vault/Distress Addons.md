@@ -1,0 +1,3 @@
+- In-game Random Ship Sprite Generator (based on the algorithm from https://2draw.me/random_ship_generator/)
+- Randomly generated Planet Councilors
+- Buyable and upgradeable ships
