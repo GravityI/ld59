@@ -1,6 +1,6 @@
 [gd_resource type="Theme" format=3 uid="uid://c0pdtj7a2k0uh"]
 
-[ext_resource type="FontFile" uid="uid://cfxyraciqkf4r" path="res://fonts/pixelated-elegance/PixelatedEleganceRegular-ovawB.ttf" id="1_1fvms"]
+[ext_resource type="FontFile" uid="uid://cfxyraciqkf4r" path="res://graphics/fonts/pixelated-elegance/PixelatedEleganceRegular-ovawB.ttf" id="1_1fvms"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0wfyh"]
 content_margin_left = 4.0

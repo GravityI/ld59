@@ -1,8 +1,36 @@
 [gd_scene format=3 uid="uid://cqow47bch5ocs"]
 
 [ext_resource type="Theme" uid="uid://c0pdtj7a2k0uh" path="res://game_theme.tres" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://d1beq52whxn1v" path="res://scripts/game_manager.gd" id="1_sugp2"]
+[ext_resource type="Script" uid="uid://dhdeag2rgp4ol" path="res://scripts/ui_manager.gd" id="2_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://8byl5b1u1ble" path="res://graphics/planet-mask.png" id="3_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://btxtmr64lvtyv" path="res://graphics/station-mask.png" id="3_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://byc70mu8xyu78" path="res://graphics/planets.png" id="4_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://buonghyf2wtm3" path="res://graphics/station.png" id="4_tipki"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_o5qli"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tefeu"]
+atlas = ExtResource("4_tbgi4")
+region = Rect2(132, 0, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbgi4"]
+atlas = ExtResource("4_tbgi4")
+region = Rect2(0, 132, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6xl0"]
+atlas = ExtResource("4_tbgi4")
+region = Rect2(66, 66, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tipki"]
+atlas = ExtResource("4_tbgi4")
+region = Rect2(198, 66, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85g3d"]
+atlas = ExtResource("4_tbgi4")
+region = Rect2(66, 132, 66, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_choun"]
+atlas = ExtResource("4_tbgi4")
+region = Rect2(66, 198, 66, 66)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0wfyh"]
 content_margin_left = 2.0
@@ -24,6 +52,7 @@ content_margin_bottom = 2.0
 bg_color = Color(1, 0, 0.016666412, 0.8980392)
 
 [node name="Main" type="Node" unique_id=521601107]
+script = ExtResource("1_sugp2")
 
 [node name="Background" type="ColorRect" parent="." unique_id=20420499]
 anchors_preset = 15
@@ -35,107 +64,203 @@ theme = ExtResource("1_o5qli")
 color = Color(0, 0, 0, 1)
 metadata/_edit_lock_ = true
 
-[node name="Station" type="TextureRect" parent="." unique_id=1903897855]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+[node name="Galaxy" type="Control" parent="." unique_id=286429443]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_right = -16.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("PlaceholderTexture2D_o5qli")
-metadata/_edit_lock_ = true
 
-[node name="Planet1" type="TextureRect" parent="." unique_id=66240893]
+[node name="Station" type="TextureRect" parent="Galaxy" unique_id=1903897855]
+clip_children = 1
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -192.0
+offset_left = -16.0
+offset_top = -128.0
+offset_right = 48.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(32, 128)
+texture = ExtResource("3_o6xl0")
+metadata/_edit_lock_ = true
+
+[node name="StationTexture" type="TextureRect" parent="Galaxy/Station" unique_id=543031241]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -129.0
+offset_right = 33.0
+offset_bottom = 129.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_tipki")
+metadata/_edit_lock_ = true
+
+[node name="Planet1" type="TextureRect" parent="Galaxy" unique_id=66240893]
+clip_children = 1
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.0
 offset_top = -196.0
-offset_right = -128.0
+offset_right = -160.0
 offset_bottom = -132.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2, 2)
 pivot_offset = Vector2(32, 32)
-texture = SubResource("PlaceholderTexture2D_o5qli")
+texture = ExtResource("3_jyhfs")
+metadata/_edit_lock_ = true
 
-[node name="Planet2" type="TextureRect" parent="." unique_id=211797752]
+[node name="PlanetTexture" type="TextureRect" parent="Galaxy/Planet1" unique_id=1349569370]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_tefeu")
+metadata/_edit_lock_ = true
+
+[node name="Planet2" type="TextureRect" parent="Galaxy" unique_id=211797752]
+clip_children = 1
+layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 256.0
+offset_left = 192.0
 offset_top = -32.0
-offset_right = 320.0
+offset_right = 256.0
 offset_bottom = 32.0
 grow_vertical = 2
+scale = Vector2(2, 2)
 pivot_offset = Vector2(32, 32)
-texture = SubResource("PlaceholderTexture2D_o5qli")
+texture = ExtResource("3_jyhfs")
+metadata/_edit_lock_ = true
 
-[node name="Planet3" type="TextureRect" parent="." unique_id=2055354237]
+[node name="PlanetTexture" type="TextureRect" parent="Galaxy/Planet2" unique_id=65923300]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_tbgi4")
+metadata/_edit_lock_ = true
+
+[node name="Planet3" type="TextureRect" parent="Galaxy" unique_id=2055354237]
+clip_children = 1
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -192.0
+offset_left = -224.0
 offset_top = 132.0
-offset_right = -128.0
+offset_right = -160.0
 offset_bottom = 196.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2, 2)
 pivot_offset = Vector2(32, 32)
-texture = SubResource("PlaceholderTexture2D_o5qli")
+texture = ExtResource("3_jyhfs")
+metadata/_edit_lock_ = true
 
-[node name="Planet4" type="TextureRect" parent="." unique_id=139975134]
+[node name="PlanetTexture" type="TextureRect" parent="Galaxy/Planet3" unique_id=1664934949]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_o6xl0")
+metadata/_edit_lock_ = true
+
+[node name="Planet4" type="TextureRect" parent="Galaxy" unique_id=139975134]
+clip_children = 1
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 160.0
+offset_left = 192.0
 offset_top = -196.0
-offset_right = 224.0
+offset_right = 256.0
 offset_bottom = -132.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2, 2)
 pivot_offset = Vector2(32, 32)
-texture = SubResource("PlaceholderTexture2D_o5qli")
+texture = ExtResource("3_jyhfs")
+metadata/_edit_lock_ = true
 
-[node name="Planet5" type="TextureRect" parent="." unique_id=543884796]
+[node name="PlanetTexture" type="TextureRect" parent="Galaxy/Planet4" unique_id=1417588028]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_tipki")
+metadata/_edit_lock_ = true
+
+[node name="Planet5" type="TextureRect" parent="Galaxy" unique_id=543884796]
+clip_children = 1
+layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -288.0
+offset_left = -224.0
 offset_top = -20.0
-offset_right = -224.0
+offset_right = -160.0
 offset_bottom = 44.0
 grow_horizontal = 0
 grow_vertical = 2
+scale = Vector2(2, 2)
 pivot_offset = Vector2(32, 32)
-texture = SubResource("PlaceholderTexture2D_o5qli")
+texture = ExtResource("3_jyhfs")
+metadata/_edit_lock_ = true
 
-[node name="Planet6" type="TextureRect" parent="." unique_id=1594265539]
+[node name="PlanetTexture" type="TextureRect" parent="Galaxy/Planet5" unique_id=1792145141]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_85g3d")
+metadata/_edit_lock_ = true
+
+[node name="Planet6" type="TextureRect" parent="Galaxy" unique_id=1594265539]
+clip_children = 1
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 160.0
+offset_left = 192.0
 offset_top = 132.0
-offset_right = 224.0
+offset_right = 256.0
 offset_bottom = 196.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2, 2)
 pivot_offset = Vector2(32, 32)
-texture = SubResource("PlaceholderTexture2D_o5qli")
+texture = ExtResource("3_jyhfs")
+metadata/_edit_lock_ = true
+
+[node name="PlanetTexture" type="TextureRect" parent="Galaxy/Planet6" unique_id=647053763]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_choun")
+metadata/_edit_lock_ = true
 
 [node name="UI" type="Control" parent="." unique_id=2099470796]
 layout_mode = 3
@@ -144,6 +269,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_0wfyh")
 metadata/_edit_lock_ = true
 
 [node name="ChaosBar" type="ProgressBar" parent="UI" unique_id=1833395923]
@@ -195,3 +321,5 @@ text = "Time Left: 300"
 horizontal_alignment = 2
 uppercase = true
 metadata/_edit_lock_ = true
+
+[node name="Timers" type="Node" parent="." unique_id=301746717]
