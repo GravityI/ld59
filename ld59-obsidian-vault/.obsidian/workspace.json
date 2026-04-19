@@ -15,9 +15,9 @@
               "state": {
                 "file": "Distress Canvas.canvas",
                 "viewState": {
-                  "x": 1076.240655002039,
-                  "y": -358.79785646729647,
-                  "zoom": -0.24300434837479945
+                  "x": 1061.733247668191,
+                  "y": 223.86706507323038,
+                  "zoom": -1.4
                 }
               },
               "icon": "lucide-layout-dashboard",
@@ -188,11 +188,11 @@
   },
   "active": "b883b23b4d1ad8e2",
   "lastOpenFiles": [
-    "LD59.canvas",
+    "Distress.md",
     "Distress Canvas.canvas",
+    "LD59.canvas",
     "Beastcaller.md",
     "Beastcaller Addons.md",
-    "Distress.md",
     "Distress Addons.md",
     "Welcome.md"
   ]

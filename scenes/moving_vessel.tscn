@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cy48rox3kykxy"]
+
+[ext_resource type="Script" uid="uid://dh8yfrnrtwfhs" path="res://scripts/moving_vessel.gd" id="1_bsuff"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vd1t4"]
+load_path = "res://.godot/imported/ships.png-57ed8b92be892bb95d9fc94ab1a2ad35.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsuff"]
+atlas = SubResource("CompressedTexture2D_vd1t4")
+region = Rect2(480, 148, 120, 136)
+
+[node name="MovingVessel" type="Sprite2D" unique_id=2041241607]
+process_mode = 1
+scale = Vector2(0.25, 0.25)
+texture = SubResource("AtlasTexture_bsuff")
+script = ExtResource("1_bsuff")

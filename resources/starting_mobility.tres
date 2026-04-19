@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Vessel" format=3 uid="uid://o1g1cvjif2gv"]
+
+[ext_resource type="Script" uid="uid://dhpavc7jo5lwe" path="res://scripts/vessel.gd" id="1_vdgfu"]
+[ext_resource type="Texture2D" uid="uid://byph3euuw1ebb" path="res://graphics/ships.png" id="2_1neal"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1neal"]
+atlas = ExtResource("2_1neal")
+region = Rect2(240, 292, 120, 136)
+
+[resource]
+script = ExtResource("1_vdgfu")
+vessel_texture = SubResource("AtlasTexture_1neal")
+vessel_id = 2
+MOBILITY = 2
+metadata/_custom_type_script = "uid://dhpavc7jo5lwe"

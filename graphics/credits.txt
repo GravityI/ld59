@@ -1,0 +1,4 @@
+Sprite Generators used:
+
+Station and Planet Masks - https://cquinn.dev/pixel-shape-generator/
+Station, Planet and Ship Textures - https://2draw.me/random_ship_generator/

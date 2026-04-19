@@ -3,34 +3,66 @@
 [ext_resource type="Theme" uid="uid://c0pdtj7a2k0uh" path="res://game_theme.tres" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://d1beq52whxn1v" path="res://scripts/game_manager.gd" id="1_sugp2"]
 [ext_resource type="Script" uid="uid://dhdeag2rgp4ol" path="res://scripts/ui_manager.gd" id="2_0wfyh"]
-[ext_resource type="Texture2D" uid="uid://8byl5b1u1ble" path="res://graphics/planet-mask.png" id="3_jyhfs"]
+[ext_resource type="Script" uid="uid://dp78qxqvv3p0j" path="res://scripts/vessel_manager.gd" id="2_tipki"]
+[ext_resource type="Script" uid="uid://dhpavc7jo5lwe" path="res://scripts/vessel.gd" id="3_choun"]
 [ext_resource type="Texture2D" uid="uid://btxtmr64lvtyv" path="res://graphics/station-mask.png" id="3_o6xl0"]
+[ext_resource type="Resource" uid="uid://c53cgvtjxn6v8" path="res://resources/starting_combat.tres" id="4_a8y0u"]
 [ext_resource type="Texture2D" uid="uid://byc70mu8xyu78" path="res://graphics/planets.png" id="4_tbgi4"]
 [ext_resource type="Texture2D" uid="uid://buonghyf2wtm3" path="res://graphics/station.png" id="4_tipki"]
+[ext_resource type="Resource" uid="uid://o1g1cvjif2gv" path="res://resources/starting_mobility.tres" id="5_jkv2x"]
+[ext_resource type="Resource" uid="uid://dn5rm7smwnxrd" path="res://resources/starting_diplomacy.tres" id="6_jbj1t"]
+[ext_resource type="PackedScene" uid="uid://5okx57cjbxo" path="res://scenes/planet.tscn" id="6_o6xl0"]
+[ext_resource type="Resource" uid="uid://dxkpvmtwpc4gs" path="res://resources/starting_science.tres" id="7_muem4"]
+[ext_resource type="Texture2D" uid="uid://drhfugjejevh7" path="res://graphics/star_background_handmade.png" id="8_jkv2x"]
+[ext_resource type="Texture2D" uid="uid://byph3euuw1ebb" path="res://graphics/ships.png" id="9_85g3d"]
+[ext_resource type="AudioStream" uid="uid://8kfchabq6en" path="res://audio/BeepBoxMusic.mp3" id="16_jbj1t"]
+[ext_resource type="AudioStream" uid="uid://caw6e5ely34ve" path="res://audio/sfx/distress_popup.wav" id="17_gqmmt"]
+[ext_resource type="AudioStream" uid="uid://o4tgkeoeynuw" path="res://audio/sfx/button_click.wav" id="17_yc10j"]
+[ext_resource type="AudioStream" uid="uid://dhtjmq1xb57dq" path="res://audio/sfx/upgrade_popup.wav" id="19_jscy8"]
+[ext_resource type="AudioStream" uid="uid://7f538oeuq4vt" path="res://audio/sfx/vessel_departed.wav" id="20_pm3ni"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tefeu"]
-atlas = ExtResource("4_tbgi4")
-region = Rect2(132, 0, 66, 66)
+[sub_resource type="Gradient" id="Gradient_f7xvl"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tbgi4"]
-atlas = ExtResource("4_tbgi4")
-region = Rect2(0, 132, 66, 66)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o6xl0"]
-atlas = ExtResource("4_tbgi4")
-region = Rect2(66, 66, 66, 66)
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jbj1t"]
+gradient = SubResource("Gradient_f7xvl")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tipki"]
 atlas = ExtResource("4_tbgi4")
-region = Rect2(198, 66, 66, 66)
+region = Rect2(67, 67, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_85g3d"]
 atlas = ExtResource("4_tbgi4")
-region = Rect2(66, 132, 66, 66)
+region = Rect2(133, 1, 64, 64)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_choun"]
+load_path = "res://.godot/imported/planets.png-ec811ec37ac732c0bd5e9e8b6d51535f.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ya4ey"]
+atlas = SubResource("CompressedTexture2D_choun")
+region = Rect2(199, 133, 64, 64)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tipki"]
+load_path = "res://.godot/imported/planets.png-ec811ec37ac732c0bd5e9e8b6d51535f.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_choun"]
-atlas = ExtResource("4_tbgi4")
-region = Rect2(66, 198, 66, 66)
+atlas = SubResource("CompressedTexture2D_tipki")
+region = Rect2(199, 199, 64, 64)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_85g3d"]
+load_path = "res://.godot/imported/planets.png-ec811ec37ac732c0bd5e9e8b6d51535f.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eb6dy"]
+atlas = SubResource("CompressedTexture2D_85g3d")
+region = Rect2(67, 1, 64, 64)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ya4ey"]
+load_path = "res://.godot/imported/planets.png-ec811ec37ac732c0bd5e9e8b6d51535f.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trceg"]
+atlas = SubResource("CompressedTexture2D_ya4ey")
+region = Rect2(67, 133, 64, 64)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0wfyh"]
 content_margin_left = 2.0
@@ -51,20 +83,53 @@ content_margin_right = 2.0
 content_margin_bottom = 2.0
 bg_color = Color(1, 0, 0.016666412, 0.8980392)
 
-[node name="Main" type="Node" unique_id=521601107]
-script = ExtResource("1_sugp2")
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8y0u"]
+atlas = ExtResource("9_85g3d")
+region = Rect2(480, 148, 120, 136)
 
-[node name="Background" type="ColorRect" parent="." unique_id=20420499]
+[node name="Main" type="Node" unique_id=521601107 node_paths=PackedStringArray("VesselManager", "UIManager", "Galaxy", "DistressPopup", "AttributeLabel1", "AttributeLabel2", "HangarContainer", "UpgradePopup", "StatUpgradeContainer", "AudioLibrary")]
+process_mode = 3
+script = ExtResource("1_sugp2")
+VesselManager = NodePath("VesselManager")
+UIManager = NodePath("UI")
+Galaxy = NodePath("Galaxy")
+DistressPopup = NodePath("UI/DistressPopup")
+AttributeLabel1 = NodePath("UI/DistressPopup/VBoxContainer/HBoxContainer/AttributeLabel1")
+AttributeLabel2 = NodePath("UI/DistressPopup/VBoxContainer/HBoxContainer/AttributeLabel2")
+HangarContainer = NodePath("UI/DistressPopup/VBoxContainer/HangarContainer")
+UpgradePopup = NodePath("UI/UpgradePopup")
+StatUpgradeContainer = NodePath("UI/UpgradePopup/VBoxContainer/StatUpgradeContainer")
+AudioLibrary = NodePath("AudioLibrary")
+
+[node name="GameTimer" type="Timer" parent="." unique_id=340427512]
+process_mode = 1
+autostart = true
+
+[node name="VesselManager" type="Node" parent="." unique_id=1734870035]
+script = ExtResource("2_tipki")
+vessels = Array[ExtResource("3_choun")]([ExtResource("4_a8y0u"), ExtResource("5_jkv2x"), ExtResource("6_jbj1t"), ExtResource("7_muem4")])
+
+[node name="BackgroundGradient" type="TextureRect" parent="." unique_id=1211995162]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_o5qli")
-color = Color(0, 0, 0, 1)
-metadata/_edit_lock_ = true
+texture = SubResource("GradientTexture1D_jbj1t")
+
+[node name="BackgroundImage" type="TextureRect" parent="." unique_id=368338194]
+modulate = Color(1, 1, 1, 0.13725491)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_jkv2x")
 
 [node name="Galaxy" type="Control" parent="." unique_id=286429443]
+process_mode = 1
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -73,6 +138,8 @@ offset_left = -16.0
 offset_right = -16.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
+metadata/_edit_lock_ = true
 
 [node name="Station" type="TextureRect" parent="Galaxy" unique_id=1903897855]
 clip_children = 1
@@ -108,168 +175,94 @@ grow_vertical = 2
 texture = ExtResource("4_tipki")
 metadata/_edit_lock_ = true
 
-[node name="Planet1" type="TextureRect" parent="Galaxy" unique_id=66240893]
-clip_children = 1
-clip_contents = true
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -224.0
-offset_top = -196.0
-offset_right = -160.0
-offset_bottom = -132.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(2, 2)
-pivot_offset = Vector2(32, 32)
-texture = ExtResource("3_jyhfs")
-metadata/_edit_lock_ = true
-
-[node name="PlanetTexture" type="TextureRect" parent="Galaxy/Planet1" unique_id=1349569370]
+[node name="Planet1" parent="Galaxy" unique_id=549017277 node_paths=PackedStringArray("GameManager") instance=ExtResource("6_o6xl0")]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = SubResource("AtlasTexture_tefeu")
-metadata/_edit_lock_ = true
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 352.0
+offset_top = 128.0
+offset_right = 416.0
+offset_bottom = 192.0
+grow_horizontal = 1
+grow_vertical = 1
+PlanetTexture = SubResource("AtlasTexture_tipki")
+planet_id = 1
+GameManager = NodePath("../..")
 
-[node name="Planet2" type="TextureRect" parent="Galaxy" unique_id=211797752]
-clip_children = 1
+[node name="Planet2" parent="Galaxy" unique_id=987311961 node_paths=PackedStringArray("GameManager") instance=ExtResource("6_o6xl0")]
+clip_contents = false
 layout_mode = 1
 anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
+anchor_left = 0.0
+anchor_right = 0.0
 offset_left = 192.0
 offset_top = -32.0
 offset_right = 256.0
 offset_bottom = 32.0
-grow_vertical = 2
-scale = Vector2(2, 2)
-pivot_offset = Vector2(32, 32)
-texture = ExtResource("3_jyhfs")
-metadata/_edit_lock_ = true
+grow_horizontal = 1
+PlanetTexture = SubResource("AtlasTexture_85g3d")
+planet_id = 2
+GameManager = NodePath("../..")
 
-[node name="PlanetTexture" type="TextureRect" parent="Galaxy/Planet2" unique_id=65923300]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = SubResource("AtlasTexture_tbgi4")
-metadata/_edit_lock_ = true
-
-[node name="Planet3" type="TextureRect" parent="Galaxy" unique_id=2055354237]
-clip_children = 1
+[node name="Planet3" parent="Galaxy" unique_id=1243615036 node_paths=PackedStringArray("GameManager") instance=ExtResource("6_o6xl0")]
+clip_contents = false
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -224.0
 offset_top = 132.0
-offset_right = -160.0
 offset_bottom = 196.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(2, 2)
-pivot_offset = Vector2(32, 32)
-texture = ExtResource("3_jyhfs")
-metadata/_edit_lock_ = true
+PlanetTexture = SubResource("AtlasTexture_ya4ey")
+planet_id = 3
+GameManager = NodePath("../..")
 
-[node name="PlanetTexture" type="TextureRect" parent="Galaxy/Planet3" unique_id=1664934949]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = SubResource("AtlasTexture_o6xl0")
-metadata/_edit_lock_ = true
-
-[node name="Planet4" type="TextureRect" parent="Galaxy" unique_id=139975134]
-clip_children = 1
+[node name="Planet4" parent="Galaxy" unique_id=882073510 node_paths=PackedStringArray("GameManager") instance=ExtResource("6_o6xl0")]
+clip_contents = false
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = 192.0
-offset_top = -196.0
 offset_right = 256.0
-offset_bottom = -132.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(2, 2)
-pivot_offset = Vector2(32, 32)
-texture = ExtResource("3_jyhfs")
-metadata/_edit_lock_ = true
+PlanetTexture = SubResource("AtlasTexture_choun")
+planet_id = 4
+GameManager = NodePath("../..")
 
-[node name="PlanetTexture" type="TextureRect" parent="Galaxy/Planet4" unique_id=1417588028]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = SubResource("AtlasTexture_tipki")
-metadata/_edit_lock_ = true
-
-[node name="Planet5" type="TextureRect" parent="Galaxy" unique_id=543884796]
-clip_children = 1
+[node name="Planet5" parent="Galaxy" unique_id=1010037774 node_paths=PackedStringArray("GameManager") instance=ExtResource("6_o6xl0")]
+clip_contents = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
-anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -224.0
+offset_left = -236.0
 offset_top = -20.0
-offset_right = -160.0
+offset_right = -172.0
 offset_bottom = 44.0
 grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(2, 2)
-pivot_offset = Vector2(32, 32)
-texture = ExtResource("3_jyhfs")
-metadata/_edit_lock_ = true
+PlanetTexture = SubResource("AtlasTexture_eb6dy")
+planet_id = 5
+GameManager = NodePath("../..")
 
-[node name="PlanetTexture" type="TextureRect" parent="Galaxy/Planet5" unique_id=1792145141]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = SubResource("AtlasTexture_85g3d")
-metadata/_edit_lock_ = true
-
-[node name="Planet6" type="TextureRect" parent="Galaxy" unique_id=1594265539]
-clip_children = 1
+[node name="Planet6" parent="Galaxy" unique_id=1757185291 node_paths=PackedStringArray("GameManager") instance=ExtResource("6_o6xl0")]
+clip_contents = false
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = 192.0
 offset_top = 132.0
 offset_right = 256.0
 offset_bottom = 196.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(2, 2)
-pivot_offset = Vector2(32, 32)
-texture = ExtResource("3_jyhfs")
-metadata/_edit_lock_ = true
+PlanetTexture = SubResource("AtlasTexture_trceg")
+planet_id = 6
+GameManager = NodePath("../..")
 
-[node name="PlanetTexture" type="TextureRect" parent="Galaxy/Planet6" unique_id=647053763]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = SubResource("AtlasTexture_choun")
-metadata/_edit_lock_ = true
-
-[node name="UI" type="Control" parent="." unique_id=2099470796]
+[node name="UI" type="Control" parent="." unique_id=2099470796 node_paths=PackedStringArray("GameManager", "ChaosBar", "TimeLabel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("2_0wfyh")
+GameManager = NodePath("..")
+ChaosBar = NodePath("ChaosBar")
+TimeLabel = NodePath("TimeLeftLabel")
 metadata/_edit_lock_ = true
 
 [node name="ChaosBar" type="ProgressBar" parent="UI" unique_id=1833395923]
@@ -281,6 +274,7 @@ anchor_bottom = 1.0
 offset_top = -33.0
 grow_horizontal = 2
 grow_vertical = 0
+mouse_filter = 2
 theme = ExtResource("1_o5qli")
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
@@ -288,7 +282,6 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/background = SubResource("StyleBoxFlat_0wfyh")
 theme_override_styles/fill = SubResource("StyleBoxFlat_o5qli")
 step = 1.0
-value = 50.0
 metadata/_edit_lock_ = true
 
 [node name="ChaosBarLabel" type="Label" parent="UI" unique_id=399942353]
@@ -306,7 +299,7 @@ text = "Chaos Meter"
 uppercase = true
 metadata/_edit_lock_ = true
 
-[node name="Time Left" type="Label" parent="UI" unique_id=379602030]
+[node name="TimeLeftLabel" type="Label" parent="UI" unique_id=379602030]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -322,4 +315,351 @@ horizontal_alignment = 2
 uppercase = true
 metadata/_edit_lock_ = true
 
-[node name="Timers" type="Node" parent="." unique_id=301746717]
+[node name="DistressPopup" type="PopupPanel" parent="UI" unique_id=1506957528]
+process_mode = 3
+oversampling_override = 1.0
+title = "Distress Popup"
+initial_position = 1
+size = Vector2i(1024, 500)
+always_on_top = true
+max_size = Vector2i(1024, 512)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/DistressPopup" unique_id=1255121873]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 1020.0
+offset_bottom = 496.0
+theme_override_constants/separation = 32
+
+[node name="DistressTitle" type="Label" parent="UI/DistressPopup/VBoxContainer" unique_id=2018806378]
+layout_mode = 2
+theme = ExtResource("1_o5qli")
+text = "Thanks for answering the call
+this planet needs your help!"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="PreferredAttributesLabel" type="Label" parent="UI/DistressPopup/VBoxContainer" unique_id=1537900350]
+layout_mode = 2
+theme = ExtResource("1_o5qli")
+text = "Preferred Attributes"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/DistressPopup/VBoxContainer" unique_id=247037403]
+layout_mode = 2
+alignment = 1
+
+[node name="AttributeLabel1" type="Label" parent="UI/DistressPopup/VBoxContainer/HBoxContainer" unique_id=605302454]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_o5qli")
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "COMBAT"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="VSeparator" type="VSeparator" parent="UI/DistressPopup/VBoxContainer/HBoxContainer" unique_id=413725641]
+layout_mode = 2
+
+[node name="AttributeLabel2" type="Label" parent="UI/DistressPopup/VBoxContainer/HBoxContainer" unique_id=1902032399]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_o5qli")
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "MObility"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="ChooseShipLabel" type="Label" parent="UI/DistressPopup/VBoxContainer" unique_id=1545835731]
+layout_mode = 2
+theme = ExtResource("1_o5qli")
+text = "Send one of your available vessels"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="HangarContainer" type="HBoxContainer" parent="UI/DistressPopup/VBoxContainer" unique_id=1655240145]
+layout_mode = 2
+
+[node name="VesselContainer1" type="VBoxContainer" parent="UI/DistressPopup/VBoxContainer/HangarContainer" unique_id=1792166050]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VesselTexture" type="Button" parent="UI/DistressPopup/VBoxContainer/HangarContainer/VesselContainer1" unique_id=676215437]
+layout_mode = 2
+icon = SubResource("AtlasTexture_a8y0u")
+icon_alignment = 1
+
+[node name="TimeNeededLabel" type="Label" parent="UI/DistressPopup/VBoxContainer/HangarContainer/VesselContainer1" unique_id=2013558431]
+layout_mode = 2
+theme = ExtResource("1_o5qli")
+text = "Duration"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="DurationLabel" type="Label" parent="UI/DistressPopup/VBoxContainer/HangarContainer/VesselContainer1" unique_id=1273269861]
+layout_mode = 2
+theme = ExtResource("1_o5qli")
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "0"
+horizontal_alignment = 1
+
+[node name="VesselContainer2" type="VBoxContainer" parent="UI/DistressPopup/VBoxContainer/HangarContainer" unique_id=946406403]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VesselTexture" type="Button" parent="UI/DistressPopup/VBoxContainer/HangarContainer/VesselContainer2" unique_id=1797243610]
+layout_mode = 2
+icon = SubResource("AtlasTexture_a8y0u")
+icon_alignment = 1
+
+[node name="TimeNeededLabel" type="Label" parent="UI/DistressPopup/VBoxContainer/HangarContainer/VesselContainer2" unique_id=1746808320]
+layout_mode = 2
+theme = ExtResource("1_o5qli")
+text = "Duration"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="DurationLabel" type="Label" parent="UI/DistressPopup/VBoxContainer/HangarContainer/VesselContainer2" unique_id=1777006381]
+layout_mode = 2
+theme = ExtResource("1_o5qli")
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "0"
+horizontal_alignment = 1
+
+[node name="VesselContainer3" type="VBoxContainer" parent="UI/DistressPopup/VBoxContainer/HangarContainer" unique_id=1006675534]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VesselTexture" type="Button" parent="UI/DistressPopup/VBoxContainer/HangarContainer/VesselContainer3" unique_id=361296115]
+layout_mode = 2
+icon = SubResource("AtlasTexture_a8y0u")
+icon_alignment = 1
+
+[node name="TimeNeededLabel" type="Label" parent="UI/DistressPopup/VBoxContainer/HangarContainer/VesselContainer3" unique_id=343585920]
+layout_mode = 2
+theme = ExtResource("1_o5qli")
+text = "Duration"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="DurationLabel" type="Label" parent="UI/DistressPopup/VBoxContainer/HangarContainer/VesselContainer3" unique_id=614213745]
+layout_mode = 2
+theme = ExtResource("1_o5qli")
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "0"
+horizontal_alignment = 1
+
+[node name="VesselContainer4" type="VBoxContainer" parent="UI/DistressPopup/VBoxContainer/HangarContainer" unique_id=1788208794]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VesselTexture" type="Button" parent="UI/DistressPopup/VBoxContainer/HangarContainer/VesselContainer4" unique_id=995717014]
+layout_mode = 2
+icon = SubResource("AtlasTexture_a8y0u")
+icon_alignment = 1
+
+[node name="TimeNeededLabel" type="Label" parent="UI/DistressPopup/VBoxContainer/HangarContainer/VesselContainer4" unique_id=1450656174]
+layout_mode = 2
+theme = ExtResource("1_o5qli")
+text = "Duration"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="DurationLabel" type="Label" parent="UI/DistressPopup/VBoxContainer/HangarContainer/VesselContainer4" unique_id=183105219]
+layout_mode = 2
+theme = ExtResource("1_o5qli")
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+text = "0"
+horizontal_alignment = 1
+
+[node name="UpgradePopup" type="PopupPanel" parent="UI" unique_id=228359145]
+process_mode = 3
+oversampling_override = 1.0
+title = "Distress Popup"
+initial_position = 1
+size = Vector2i(1024, 500)
+transient_to_focused = true
+always_on_top = true
+max_size = Vector2i(1024, 512)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/UpgradePopup" unique_id=1527399908]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 1020.0
+offset_bottom = 496.0
+
+[node name="UpgradePopupTitle" type="Label" parent="UI/UpgradePopup/VBoxContainer" unique_id=29141305]
+layout_mode = 2
+theme = ExtResource("1_o5qli")
+text = "mission successful
+Choose an Upgrade for your vessel"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="VesselTexture" type="TextureRect" parent="UI/UpgradePopup/VBoxContainer" unique_id=1203801318]
+layout_mode = 2
+texture = SubResource("AtlasTexture_a8y0u")
+stretch_mode = 3
+
+[node name="HSeparator" type="HSeparator" parent="UI/UpgradePopup/VBoxContainer" unique_id=455224103]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="StatUpgradeContainer" type="HBoxContainer" parent="UI/UpgradePopup/VBoxContainer" unique_id=964265434]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="StatsContainer1" type="VBoxContainer" parent="UI/UpgradePopup/VBoxContainer/StatUpgradeContainer" unique_id=393587520]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StatName" type="Label" parent="UI/UpgradePopup/VBoxContainer/StatUpgradeContainer/StatsContainer1" unique_id=1205798921]
+layout_mode = 2
+theme = ExtResource("1_o5qli")
+text = "COMBAT"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="CurrentStatNumber" type="Label" parent="UI/UpgradePopup/VBoxContainer/StatUpgradeContainer/StatsContainer1" unique_id=1007341136]
+layout_mode = 2
+theme = ExtResource("1_o5qli")
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradeButton" type="Button" parent="UI/UpgradePopup/VBoxContainer/StatUpgradeContainer/StatsContainer1" unique_id=771345206]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_o5qli")
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "+ 1"
+
+[node name="StatsContainer2" type="VBoxContainer" parent="UI/UpgradePopup/VBoxContainer/StatUpgradeContainer" unique_id=145026458]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StatName" type="Label" parent="UI/UpgradePopup/VBoxContainer/StatUpgradeContainer/StatsContainer2" unique_id=1463222320]
+layout_mode = 2
+theme = ExtResource("1_o5qli")
+text = "mobility"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="CurrentStatNumber" type="Label" parent="UI/UpgradePopup/VBoxContainer/StatUpgradeContainer/StatsContainer2" unique_id=1560853558]
+layout_mode = 2
+theme = ExtResource("1_o5qli")
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradeButton" type="Button" parent="UI/UpgradePopup/VBoxContainer/StatUpgradeContainer/StatsContainer2" unique_id=1783842212]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_o5qli")
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "+ 1"
+
+[node name="StatsContainer3" type="VBoxContainer" parent="UI/UpgradePopup/VBoxContainer/StatUpgradeContainer" unique_id=1786863252]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StatName" type="Label" parent="UI/UpgradePopup/VBoxContainer/StatUpgradeContainer/StatsContainer3" unique_id=765174375]
+layout_mode = 2
+theme = ExtResource("1_o5qli")
+text = "diplomacy"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="CurrentStatNumber" type="Label" parent="UI/UpgradePopup/VBoxContainer/StatUpgradeContainer/StatsContainer3" unique_id=1097537605]
+layout_mode = 2
+theme = ExtResource("1_o5qli")
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradeButton" type="Button" parent="UI/UpgradePopup/VBoxContainer/StatUpgradeContainer/StatsContainer3" unique_id=1667815434]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_o5qli")
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "+ 1"
+
+[node name="StatsContainer4" type="VBoxContainer" parent="UI/UpgradePopup/VBoxContainer/StatUpgradeContainer" unique_id=1252042340]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StatName" type="Label" parent="UI/UpgradePopup/VBoxContainer/StatUpgradeContainer/StatsContainer4" unique_id=161020212]
+layout_mode = 2
+theme = ExtResource("1_o5qli")
+text = "science"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="CurrentStatNumber" type="Label" parent="UI/UpgradePopup/VBoxContainer/StatUpgradeContainer/StatsContainer4" unique_id=256897554]
+layout_mode = 2
+theme = ExtResource("1_o5qli")
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradeButton" type="Button" parent="UI/UpgradePopup/VBoxContainer/StatUpgradeContainer/StatsContainer4" unique_id=1466991431]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_o5qli")
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "+ 1"
+
+[node name="AudioLibrary" type="Node" parent="." unique_id=505916974]
+process_mode = 3
+
+[node name="Music" type="AudioStreamPlayer" parent="AudioLibrary" unique_id=3291670]
+process_mode = 3
+stream = ExtResource("16_jbj1t")
+volume_db = -6.0
+autoplay = true
+parameters/looping = true
+
+[node name="button_click" type="AudioStreamPlayer" parent="AudioLibrary" unique_id=789643635]
+process_mode = 3
+stream = ExtResource("17_yc10j")
+volume_db = -6.0
+
+[node name="distress_popup" type="AudioStreamPlayer" parent="AudioLibrary" unique_id=974100814]
+process_mode = 3
+stream = ExtResource("17_gqmmt")
+volume_db = -6.0
+
+[node name="upgrade_popup" type="AudioStreamPlayer" parent="AudioLibrary" unique_id=13874270]
+process_mode = 3
+stream = ExtResource("19_jscy8")
+volume_db = -6.0
+
+[node name="vessel_departed" type="AudioStreamPlayer" parent="AudioLibrary" unique_id=498948372]
+process_mode = 3
+stream = ExtResource("20_pm3ni")
+volume_db = -6.0
+
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
+[connection signal="popup_hide" from="UI/DistressPopup" to="." method="_on_distress_popup_popup_hide"]
+[connection signal="button_down" from="UI/DistressPopup/VBoxContainer/HangarContainer/VesselContainer1/VesselTexture" to="." method="_on_vessel_texture_button_down" binds= [1]]
+[connection signal="button_down" from="UI/DistressPopup/VBoxContainer/HangarContainer/VesselContainer2/VesselTexture" to="." method="_on_vessel_texture_button_down" binds= [2]]
+[connection signal="button_down" from="UI/DistressPopup/VBoxContainer/HangarContainer/VesselContainer3/VesselTexture" to="." method="_on_vessel_texture_button_down" binds= [3]]
+[connection signal="button_down" from="UI/DistressPopup/VBoxContainer/HangarContainer/VesselContainer4/VesselTexture" to="." method="_on_vessel_texture_button_down" binds= [4]]
+[connection signal="popup_hide" from="UI/UpgradePopup" to="." method="_on_upgrade_popup_popup_hide"]
+[connection signal="button_down" from="UI/UpgradePopup/VBoxContainer/StatUpgradeContainer/StatsContainer1/UpgradeButton" to="." method="_on_upgrade_button_button_down" binds= [1]]
+[connection signal="button_down" from="UI/UpgradePopup/VBoxContainer/StatUpgradeContainer/StatsContainer2/UpgradeButton" to="." method="_on_upgrade_button_button_down" binds= [2]]
+[connection signal="button_down" from="UI/UpgradePopup/VBoxContainer/StatUpgradeContainer/StatsContainer3/UpgradeButton" to="." method="_on_upgrade_button_button_down" binds= [3]]
+[connection signal="button_down" from="UI/UpgradePopup/VBoxContainer/StatUpgradeContainer/StatsContainer4/UpgradeButton" to="." method="_on_upgrade_button_button_down" binds= [4]]

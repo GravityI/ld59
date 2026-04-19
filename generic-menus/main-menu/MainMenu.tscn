@@ -1,0 +1,514 @@
+[gd_scene format=3 uid="uid://bjuag67go07d"]
+
+[ext_resource type="Script" uid="uid://cwor3513ufhm1" path="res://generic-menus/main-menu/main_menu.gd" id="1_eunq0"]
+[ext_resource type="Texture2D" uid="uid://btxtmr64lvtyv" path="res://graphics/station-mask.png" id="1_tm43t"]
+[ext_resource type="PackedScene" uid="uid://cqow47bch5ocs" path="res://scenes/main.tscn" id="2_8sl73"]
+[ext_resource type="Texture2D" uid="uid://buonghyf2wtm3" path="res://graphics/station.png" id="2_ilplr"]
+[ext_resource type="Theme" uid="uid://c0pdtj7a2k0uh" path="res://game_theme.tres" id="3_8sl73"]
+[ext_resource type="Texture2D" uid="uid://drhfugjejevh7" path="res://graphics/star_background_handmade.png" id="3_rey8b"]
+[ext_resource type="Texture2D" uid="uid://8byl5b1u1ble" path="res://graphics/planet-mask.png" id="6_wmjc0"]
+[ext_resource type="Texture2D" uid="uid://byc70mu8xyu78" path="res://graphics/planets.png" id="7_rey8b"]
+[ext_resource type="AudioStream" uid="uid://8kfchabq6en" path="res://audio/BeepBoxMusic.mp3" id="9_kyvfp"]
+
+[sub_resource type="Gradient" id="Gradient_rey8b"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_n3baa"]
+gradient = SubResource("Gradient_rey8b")
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8lq11"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8yyf5"]
+content_margin_left = 4.0
+content_margin_top = 16.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s85qs"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3660"]
+content_margin_left = 4.0
+content_margin_top = 16.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.225, 0.225, 0.225, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iacf0"]
+content_margin_left = 4.0
+content_margin_top = 16.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h4m2u"]
+content_margin_left = 0.0
+content_margin_top = 16.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.16470589, 0.9882353, 0.59607846, 0.2627451)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1u3f4"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xcgey"]
+content_margin_left = 4.0
+content_margin_top = 16.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.225, 0.225, 0.225, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxeqj"]
+content_margin_left = 4.0
+content_margin_top = 16.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rey8b"]
+atlas = ExtResource("7_rey8b")
+region = Rect2(67, 67, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kyvfp"]
+atlas = ExtResource("7_rey8b")
+region = Rect2(199, 199, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7f5k"]
+atlas = ExtResource("7_rey8b")
+region = Rect2(67, 1, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmjc0"]
+atlas = ExtResource("7_rey8b")
+region = Rect2(133, 1, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tefeu"]
+atlas = ExtResource("7_rey8b")
+region = Rect2(199, 133, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dk5js"]
+atlas = ExtResource("7_rey8b")
+region = Rect2(67, 133, 64, 64)
+
+[node name="MainMenu" type="Control" unique_id=1957250299 node_paths=PackedStringArray("ControlsLabel", "ControlsButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eunq0")
+PlayScene = ExtResource("2_8sl73")
+ControlsLabel = NodePath("ControlsLabel")
+ControlsButton = NodePath("ControlsButton")
+
+[node name="BackgroundGradient" type="TextureRect" parent="." unique_id=521596506]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_n3baa")
+
+[node name="BackgroundImage" type="TextureRect" parent="." unique_id=171432243]
+modulate = Color(1, 1, 1, 0.13725491)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_rey8b")
+
+[node name="LogoControl" type="Control" parent="." unique_id=1503082056]
+layout_mode = 1
+anchor_right = 0.5
+offset_right = -128.0
+
+[node name="GameLogo" type="TextureRect" parent="LogoControl" unique_id=1143355075]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.286
+anchor_bottom = 1.0
+offset_top = -0.5
+offset_right = -0.12799072
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_8lq11")
+stretch_mode = 5
+
+[node name="GameTitle" type="Label" parent="LogoControl" unique_id=398475002]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.286
+offset_left = 24.0
+offset_top = 13.0
+offset_right = 229.87201
+offset_bottom = 141.0
+grow_horizontal = 2
+theme = ExtResource("3_8sl73")
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 128
+text = "DISTRESS"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="ButtonControl" type="Control" parent="." unique_id=238548204]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 179.0
+offset_right = 576.0
+offset_bottom = 179.0
+grow_vertical = 2
+
+[node name="ButtonContainer" type="VBoxContainer" parent="ButtonControl" unique_id=397072188]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.5
+offset_top = -205.0
+offset_right = 169.5
+offset_bottom = 205.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="PlayButton" type="Button" parent="ButtonControl/ButtonContainer" unique_id=1319677034]
+layout_mode = 2
+theme = ExtResource("3_8sl73")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.8388969, 0.83889705, 0.8388975, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_8yyf5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s85qs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g3660")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_iacf0")
+theme_override_styles/focus = SubResource("StyleBoxFlat_h4m2u")
+text = "PLAY"
+flat = true
+
+[node name="CreditsButton" type="Button" parent="ButtonControl/ButtonContainer" unique_id=1309755503]
+visible = false
+layout_mode = 2
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_8yyf5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1u3f4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xcgey")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nxeqj")
+theme_override_styles/focus = SubResource("StyleBoxFlat_h4m2u")
+disabled = true
+text = "CREDITS"
+flat = true
+metadata/_edit_lock_ = true
+
+[node name="QuitButton" type="Button" parent="ButtonControl/ButtonContainer" unique_id=1280200628]
+visible = false
+layout_mode = 2
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_8yyf5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1u3f4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xcgey")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_nxeqj")
+theme_override_styles/focus = SubResource("StyleBoxFlat_h4m2u")
+text = "QUIT"
+flat = true
+metadata/_edit_lock_ = true
+
+[node name="ControlsButton" type="Button" parent="." unique_id=1211467637]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 101.0
+offset_top = -26.0
+offset_right = 488.0
+offset_bottom = 26.0
+grow_vertical = 2
+theme = ExtResource("3_8sl73")
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_hover_color = Color(0.56050146, 0.5554015, 0.07394726, 1)
+theme_override_font_sizes/font_size = 48
+text = "How to Play"
+flat = true
+
+[node name="Planet4" type="TextureRect" parent="." unique_id=1387656569 groups=["planet"]]
+clip_children = 1
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 44.0
+offset_top = -19.0
+offset_right = 108.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(32, 32)
+texture = ExtResource("6_wmjc0")
+
+[node name="PlanetTexture" type="TextureRect" parent="Planet4" unique_id=388639948]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_rey8b")
+metadata/_edit_lock_ = true
+
+[node name="Planet5" type="TextureRect" parent="." unique_id=700930966 groups=["planet"]]
+clip_children = 1
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 165.0
+offset_top = -119.0
+offset_right = 229.0
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(32, 32)
+texture = ExtResource("6_wmjc0")
+
+[node name="PlanetTexture" type="TextureRect" parent="Planet5" unique_id=77447863]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_kyvfp")
+metadata/_edit_lock_ = true
+
+[node name="Planet6" type="TextureRect" parent="." unique_id=1273852255 groups=["planet"]]
+clip_children = 1
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 336.0
+offset_top = -173.0
+offset_right = 400.0
+offset_bottom = -109.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(32, 32)
+texture = ExtResource("6_wmjc0")
+
+[node name="PlanetTexture" type="TextureRect" parent="Planet6" unique_id=682925673]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_u7f5k")
+metadata/_edit_lock_ = true
+
+[node name="Station" type="TextureRect" parent="." unique_id=1922315465]
+clip_children = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 225.0
+offset_top = -128.0
+offset_right = 289.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.40142572
+scale = Vector2(2, 2)
+pivot_offset = Vector2(32, 128)
+texture = ExtResource("1_tm43t")
+
+[node name="StationTexture" type="TextureRect" parent="Station" unique_id=624926594]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = -129.0
+offset_right = 33.0
+offset_bottom = 129.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ilplr")
+metadata/_edit_lock_ = true
+
+[node name="Planet1" type="TextureRect" parent="." unique_id=549017277 groups=["planet"]]
+clip_children = 1
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 96.0
+offset_top = 117.0
+offset_right = 160.0
+offset_bottom = 181.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(32, 32)
+texture = ExtResource("6_wmjc0")
+
+[node name="PlanetTexture" type="TextureRect" parent="Planet1" unique_id=1683338286]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_wmjc0")
+metadata/_edit_lock_ = true
+
+[node name="Planet2" type="TextureRect" parent="." unique_id=266431168 groups=["planet"]]
+clip_children = 1
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 281.0
+offset_top = 75.0
+offset_right = 345.0
+offset_bottom = 139.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(32, 32)
+texture = ExtResource("6_wmjc0")
+
+[node name="PlanetTexture" type="TextureRect" parent="Planet2" unique_id=625970655]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_tefeu")
+metadata/_edit_lock_ = true
+
+[node name="Planet3" type="TextureRect" parent="." unique_id=1138056875 groups=["planet"]]
+clip_children = 1
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 397.0
+offset_top = -41.0
+offset_right = 461.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(32, 32)
+texture = ExtResource("6_wmjc0")
+
+[node name="PlanetTexture" type="TextureRect" parent="Planet3" unique_id=1826400300]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_dk5js")
+metadata/_edit_lock_ = true
+
+[node name="ControlsLabel" type="Label" parent="." unique_id=351154226]
+visible = false
+layout_mode = 0
+offset_left = 42.0
+offset_top = 171.0
+offset_right = 791.0
+offset_bottom = 400.0
+theme = ExtResource("3_8sl73")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 28
+text = "Mouse only
+
+Left Click Planets when they emit
+distress signals to send a vessel
+and stop the chaos from rising!
+
+keep the chaos below 100% 
+for 300 seconds and you win!"
+uppercase = true
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=111044555]
+stream = ExtResource("9_kyvfp")
+volume_db = -12.0
+autoplay = true
+
+[connection signal="button_down" from="ButtonControl/ButtonContainer/PlayButton" to="." method="_on_play_button_down"]
+[connection signal="button_down" from="ButtonControl/ButtonContainer/CreditsButton" to="." method="_on_credits_button_down"]
+[connection signal="button_down" from="ButtonControl/ButtonContainer/QuitButton" to="." method="_on_quit_button_down"]
+[connection signal="button_down" from="ControlsButton" to="." method="_on_controls_button_button_down"]

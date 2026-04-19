@@ -1,0 +1,339 @@
+[gd_scene format=3 uid="uid://5okx57cjbxo"]
+
+[ext_resource type="Texture2D" uid="uid://8byl5b1u1ble" path="res://graphics/planet-mask.png" id="1_3s4jt"]
+[ext_resource type="Texture2D" uid="uid://byc70mu8xyu78" path="res://graphics/planets.png" id="2_1wmcx"]
+[ext_resource type="Script" uid="uid://i1gcdumuwtgi" path="res://scripts/planet.gd" id="2_m5dqw"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="3_8dfcq"]
+[ext_resource type="Script" uid="uid://iyobd7ihqqcl" path="res://component-state-machine/state_machine.gd" id="3_m5dqw"]
+[ext_resource type="Script" uid="uid://drrkvmo11768y" path="res://component-state-machine/states/planet/idle.gd" id="4_8dfcq"]
+[ext_resource type="Script" uid="uid://bxpm8w33rsuna" path="res://component-state-machine/states/planet/distress.gd" id="5_qw1i6"]
+[ext_resource type="Script" uid="uid://cov2vpwriyryr" path="res://component-state-machine/states/planet/resolving.gd" id="6_ekhpw"]
+[ext_resource type="Theme" uid="uid://c0pdtj7a2k0uh" path="res://game_theme.tres" id="8_m5dqw"]
+[ext_resource type="AudioStream" uid="uid://cbr16c1iiawa3" path="res://audio/sfx/distress_signal.wav" id="10_qw1i6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tefeu"]
+atlas = ExtResource("2_1wmcx")
+region = Rect2(199, 133, 64, 64)
+
+[sub_resource type="Animation" id="Animation_8dfcq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StateLabel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DistressButton:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StateLabel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StateLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["DISTRESS
+SIGNAL"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("StateLabel:theme_override_colors/font_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.88, 0, 0, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("DistressButton:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_qw1i6"]
+resource_name = "distress"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StateLabel:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(0.35355338, 1, 2),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DistressButton:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StateLabel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StateLabel:text")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["DISTRESS
+SIGNAL"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("StateLabel:theme_override_colors/font_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.88, 0, 0, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("DistressButton:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ekhpw"]
+resource_name = "resolving"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StateLabel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StateLabel:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0.88, 0.77733344, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StateLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.33, 0.66),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["RESOLVING
+•", "RESOLVING
+••", "RESOLVING
+•••"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StateLabel:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DistressButton:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ekhpw"]
+_data = {
+&"RESET": SubResource("Animation_8dfcq"),
+&"distress": SubResource("Animation_qw1i6"),
+&"resolving": SubResource("Animation_ekhpw")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8dfcq"]
+
+[node name="Planet" type="TextureRect" unique_id=549017277 node_paths=PackedStringArray("StateMachine") groups=["planet"]]
+clip_children = 1
+clip_contents = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.0
+offset_top = -196.0
+offset_right = -160.0
+offset_bottom = -132.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+pivot_offset = Vector2(32, 32)
+texture = ExtResource("1_3s4jt")
+script = ExtResource("2_m5dqw")
+PlanetTexture = ExtResource("3_8dfcq")
+StateMachine = NodePath("PlanetStateMachine")
+metadata/_edit_lock_ = true
+
+[node name="PlanetTexture" type="TextureRect" parent="." unique_id=1683338286]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_tefeu")
+metadata/_edit_lock_ = true
+
+[node name="PlanetStateMachine" type="Node" parent="." unique_id=291908904 node_paths=PackedStringArray("controlled_object", "initial_state", "AnimPlayer")]
+script = ExtResource("3_m5dqw")
+controlled_object = NodePath("..")
+initial_state = NodePath("Idle")
+AnimPlayer = NodePath("../AnimationPlayer")
+
+[node name="Idle" type="Node" parent="PlanetStateMachine" unique_id=1196112295 node_paths=PackedStringArray("Distress")]
+script = ExtResource("4_8dfcq")
+Distress = NodePath("../Distress")
+
+[node name="Distress" type="Node" parent="PlanetStateMachine" unique_id=70565102 node_paths=PackedStringArray("Resolving", "distress_signal_player")]
+script = ExtResource("5_qw1i6")
+Resolving = NodePath("../Resolving")
+distress_signal_player = NodePath("../../distress_signal_player")
+
+[node name="Resolving" type="Node" parent="PlanetStateMachine" unique_id=53587736 node_paths=PackedStringArray("Idle")]
+script = ExtResource("6_ekhpw")
+Idle = NodePath("../Idle")
+
+[node name="StateLabel" type="Label" parent="." unique_id=1490160007]
+visible = false
+top_level = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49300003
+anchor_top = 0.5
+anchor_right = 0.49300003
+anchor_bottom = 0.5
+offset_left = -97.37204
+offset_top = -30.5
+offset_right = 97.62793
+offset_bottom = 30.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(97, 30)
+theme = ExtResource("8_m5dqw")
+theme_override_colors/font_color = Color(0.88, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 16
+text = "DISTRESS
+SIGNAL"
+horizontal_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2049633652]
+libraries/ = SubResource("AnimationLibrary_ekhpw")
+
+[node name="DistressButton" type="Button" parent="." unique_id=999063882]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8dfcq")
+disabled = true
+
+[node name="distress_signal_player" type="AudioStreamPlayer" parent="." unique_id=260949326]
+process_mode = 3
+stream = ExtResource("10_qw1i6")
+volume_db = -6.0
+
+[connection signal="button_down" from="DistressButton" to="." method="_on_distress_button_down"]
